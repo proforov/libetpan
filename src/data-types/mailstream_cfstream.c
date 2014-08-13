@@ -774,6 +774,7 @@ static int wait_runloop(mailstream_low * s, int wait_state)
     //https://github.com/dinhviethoa/libetpan/issues/155
     if (cfstream_data->state == STATE_WAIT_IDLE && cfstream_data->idleInterrupted) {
       error = WAIT_RUNLOOP_EXIT_INTERRUPTED;
+      fprintf(stderr, "libetpan: issue #155!\n");
       break;
     }
     
